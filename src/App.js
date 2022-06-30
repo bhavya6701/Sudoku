@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Background from "./Components/UIBackground/Background";
+import Play from "./Components/Interaction/Play";
+import "./App.css";
+import { useState } from "react";
+import Matrix from "./Components/Interaction/Matrix";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [playing, setPlaying] = useState(false);
+	const playHandler = () => {
+		setPlaying((playing) => !playing);
+	};
+
+	return (
+		<div>
+			<Background isPlaying={playing} />
+			<Play playHandler={playHandler} />
+			{playing && <Matrix />}
+		</div>
+	);
 }
 
 export default App;

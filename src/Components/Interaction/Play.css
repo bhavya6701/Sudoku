@@ -1,0 +1,18 @@
+#btn-play {
+	width: 30%;
+	animation: play-opacity 9s normal 0s 1;
+	font-size: 110%;
+}
+
+#container-play {
+	margin-top: 5%;
+}
+
+@keyframes play-opacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
