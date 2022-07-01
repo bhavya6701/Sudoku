@@ -3,8 +3,9 @@ input {
 	height: 7.5vh;
 	border: 0.05rem solid black;
 	appearance: none;
-	background-color: rgba(255, 255, 255, 0.641);
+	background-color: rgba(255, 255, 255, 0.37);
 	font-size: 35px;
+	color: rgb(255, 255, 255);
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -18,14 +19,18 @@ input[type="number"] {
 }
 
 input:hover {
-	background-color: rgba(14, 14, 14, 0.4);
+	background-color: rgba(255, 255, 255, 0);
 }
 
 input:focus {
-	background-color: rgba(14, 14, 14, 0.4);
+	background-color: rgba(255, 255, 255, 0);
 	color: rgb(255, 234, 0);
 }
 
 .bd-right {
 	border-right: 0.1rem solid black;
+}
+
+.disabled-box {
+	color: rgb(0, 0, 0);
 }

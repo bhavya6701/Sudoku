@@ -1,6 +1,6 @@
 #sudoku {
 	border: 1px solid black;
-	width: max-content;
+	width: fit-content;
 	margin: 0%;
 	padding: 0%;
 }
@@ -20,8 +20,4 @@
 	100% {
 		opacity: 1;
 	}
-}
-
-.bd-top {
-	border-top: 0.1rem solid black;
 }

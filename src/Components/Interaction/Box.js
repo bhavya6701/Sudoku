@@ -3,29 +3,49 @@ import React from "react";
 import "./Box.css";
 
 const Box = (props) => {
-	const maxLengthCheck = (object) => {
-		if (object.target.value.length > 1) {
-			object.target.value = object.target.value.slice(0, 1);
-		}
+	const boxLengthHandler = (event) => {
+		event.target.value = event.target.value.slice(0, 1);
 	};
-	if (props.corner === "right")
-		return (
-			<input
-				maxLength={1}
-				type="number"
-				className="bd-right text-center"
-				onInput={maxLengthCheck}
-			/>
-		);
-	else
-		return (
-			<input
-				maxLength={1}
-				type="number"
-				className="text-center"
-				onInput={maxLengthCheck}
-			/>
-		);
+	if (props.value !== 0) {
+		if (props.corner === "right") {
+			return (
+				<input
+					maxLength={1}
+					type="number"
+					disabled
+					value={props.value}
+					onChange={boxLengthHandler}
+					className="bd-right text-center disabled-box"
+				/>
+			);
+		} else {
+			return (
+				<input
+					maxLength={1}
+					type="number"
+					disabled
+					value={props.value}
+					onChange={boxLengthHandler}
+					className="text-center disabled-box"
+				/>
+			);
+		}
+	} else {
+		if (props.corner === "right") {
+			return (
+				<input
+					maxLength={1}
+					type="number"
+					onChange={boxLengthHandler}
+					className="bd-right text-center"
+				/>
+			);
+		} else {
+			return (
+				<input maxLength={1} type="number" onChange={boxLengthHandler} className="text-center" />
+			);
+		}
+	}
 };
 
 export default Box;
